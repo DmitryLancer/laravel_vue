@@ -1,7 +1,19 @@
+
+
+
+
+
 import ('./bootstrap');
 
 import {createApp} from 'vue'
 
-import App from './components/App.vue'
+import PostComponent from './components/PostComponent.vue'
 
-createApp(App).mount("#app")
+createApp(PostComponent).mount("#app")
+
+
+
+//
+// import App from './components/App.vue'
+//
+// createApp(App).mount("#app")
