@@ -1,7 +1,6 @@
 <template>
 <div>
     <SinglePostComponent></SinglePostComponent>
-
     <table class="table">
         <thead>
         <tr>
@@ -21,8 +20,6 @@
         </tbody>
     </table>
 
-    <button @click="sayHello">Hello</button>
-    <button @click="sayHi">Hi</button>
 
 </div>
 </template>
