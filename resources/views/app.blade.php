@@ -7,10 +7,11 @@
 
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
+    @vite('resources/js/bootstrap.js')
 </head>
 <body>
 
-<div id="app">
+<div id="app" class="p-5">
     <post-component></post-component>
 </div>
 
