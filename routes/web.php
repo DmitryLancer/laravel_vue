@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PersonController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app');
 });
+
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/persons', PersonController::class);
+});
+
 
 //
 //Route::get('/', function () {
