@@ -20,9 +20,6 @@ Route::get('/', function () {
 });
 
 
-Route::group(['namespace' => 'App\Http\Controllers'], function () {
-    Route::get('/persons', PersonController::class);
-});
 
 
 //
