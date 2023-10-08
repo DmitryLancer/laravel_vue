@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Person\IndexController;
 use App\Http\Controllers\Person\StoreController;
+use App\Http\Controllers\Person\UpdateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'App\Http\Controllers\Person', 'prefix' => 'people'], function () {
     Route::post('/', StoreController::class);
     Route::get('/', IndexController::class);
+    Route::patch('/{person}', UpdateController::class);
 });
