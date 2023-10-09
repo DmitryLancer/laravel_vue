@@ -2,26 +2,31 @@
 
     <div>
         <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Age</th>
-                <th scope="col">Job</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-            </tr>
-            </thead>
-            <tbody>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Job</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col" v-if="buttonVisibility">Delete</th>
+                    </tr>
+                </thead>
+
+
+
             <template v-for="person in people">
+                <tbody>
             <tr :class="isEdit(person.id) ? 'd-none' : ''">
                 <th scope="row">{{ person.id }}</th>
                 <td>{{ person.name }}</td>
                 <td>{{ person.age }}</td>
                 <td>{{ person.job }}</td>
-                <td><a href="#" @click.prevent="changeEditPersonId(person.id, person.name, person.age, person.job)" class="btn btn-success">Edit</a></td>
-                <td><a href="#" @click.prevent="deletePerson(person.id)" class="btn btn-danger">Delete</a></td>
+                <td><a href="#" @click="hideButton" @click.prevent="changeEditPersonId(person.id, person.name, person.age, person.job)" class="btn btn-success">Edit</a></td>
+                <td><a v-if="buttonVisibility" href="#" @click.prevent="deletePerson(person.id)" class="btn btn-danger">Delete</a></td>
             </tr>
+
+
                 <tr :class="isEdit(person.id) ? '' : 'd-none'">
                     <th scope="row">{{ person.id }}</th>
                     <td><input type="text" v-model="name" class="form-control"></td>
@@ -29,8 +34,9 @@
                     <td><input type="text" v-model="job" class="form-control"></td>
                     <td><a href="#" @click.prevent="updatePerson(person.id)" class="btn btn-success">Update</a></td>
                 </tr>
-            </template>
             </tbody>
+            </template>
+
         </table>
     </div>
 
@@ -48,6 +54,7 @@ export default {
             name: null,
             age: null,
             job: null,
+            buttonVisibility: true,
         }
     },
 
@@ -62,6 +69,11 @@ export default {
                this.people = res.data;
             })
         },
+
+        hideButton() {
+            this.buttonVisibility = false;
+        },
+
 
         updatePerson(id) {
             this.editPersonId = null;
