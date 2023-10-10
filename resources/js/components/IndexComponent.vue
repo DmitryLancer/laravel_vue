@@ -2,33 +2,23 @@
 
     <div>
         <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Job</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col" v-if="buttonVisibility">Delete</th>
-                    </tr>
-                </thead>
-
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Job</th>
+                <th scope="col">Edit</th>
+                <th scope="col" v-if="buttonVisibility">Delete</th>
+            </tr>
+            </thead>
 
 
             <template v-for="person in people">
                 <tbody>
-            <tr :class="isEdit(person.id) ? 'd-none' : ''">
-                <th scope="row">{{ person.id }}</th>
-                <td>{{ person.name }}</td>
-                <td>{{ person.age }}</td>
-                <td>{{ person.job }}</td>
-                <td><a href="#" @click="hideButton" @click.prevent="changeEditPersonId(person.id, person.name, person.age, person.job)" class="btn btn-success">Edit</a></td>
-                <td><a v-if="buttonVisibility" href="#" @click.prevent="deletePerson(person.id)" class="btn btn-danger">Delete</a></td>
-            </tr>
-
-
+                <ShowComponent :person="person" :ref="`show_${person.id}`"></ShowComponent>
                 <EditComponent :person="person" :ref="`edit_${person.id}`"></EditComponent>
-            </tbody>
+                </tbody>
             </template>
 
         </table>
@@ -39,6 +29,7 @@
 <script>
 
 import EditComponent from "./EditComponent.vue";
+import ShowComponent from "./ShowComponent.vue";
 
 export default {
     name: "IndexComponent",
@@ -61,14 +52,15 @@ export default {
 
     components: {
         EditComponent,
+        ShowComponent,
     },
 
     methods: {
         getPeople() {
             axios.get('/api/people')
-            .then( res => {
-               this.people = res.data;
-            })
+                .then(res => {
+                    this.people = res.data;
+                })
         },
 
         hideButton() {
@@ -79,14 +71,14 @@ export default {
         updatePerson(id) {
             this.editPersonId = null;
             axios.patch(`/api/people/${id}`, {name: this.name, age: this.age, job: this.job})
-                .then( res => {
+                .then(res => {
                     this.getPeople();
                 })
         },
 
         deletePerson(id) {
             axios.delete(`/api/people/${id}`)
-                .then( res => {
+                .then(res => {
                     this.getPeople();
                 })
         },
