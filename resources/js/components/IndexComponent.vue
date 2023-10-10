@@ -51,7 +51,7 @@ export default {
         return {
             people: null,
             editPersonId: null,
-            name: null,
+            name: 'Karl',
             age: null,
             job: null,
             buttonVisibility: true,
@@ -60,6 +60,7 @@ export default {
 
     mounted() {
         this.getPeople()
+
     },
 
     methods: {
@@ -101,6 +102,9 @@ export default {
             return this.editPersonId === id
         },
 
+        indexLog() {
+            console.log('this is index component');
+        }
 
 
     },

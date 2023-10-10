@@ -15,9 +15,12 @@
         </div>
     </div>
 
+    <SomeComponent></SomeComponent>
+
 </template>
 
 <script>
+import SomeComponent from "./SomeComponent.vue";
 
 export default {
     name: "CreateComponent",
@@ -28,6 +31,10 @@ export default {
             age: null,
             job: null,
         }
+    },
+
+    mounted() {
+        this.$parent.$refs.index.indexLog();
     },
 
     methods: {
@@ -41,6 +48,10 @@ export default {
             })
         }
     },
+
+    components: {
+        SomeComponent,
+    }
 
 }
 
