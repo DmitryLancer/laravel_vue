@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <SomeComponent></SomeComponent>
+    <SomeComponent :obj="obj"></SomeComponent>
 
 </template>
 
@@ -30,6 +30,11 @@ export default {
             name: null,
             age: null,
             job: null,
+            obj: {
+                color: 'yellow',
+                number: '1',
+                isPublished: 'false',
+            }
         }
     },
 
