@@ -2,18 +2,61 @@
 
 
 
+import Vue from 'vue'
+import router from "./router";
 import './bootstrap';
-import '../sass/app.scss';
-
-import {createApp} from 'vue'
-
-import PostComponent from './components/PostComponent.vue'
-
-createApp(PostComponent).mount("#app")
 
 
+const app = new Vue ({
+    el: '#app',
 
+    components: {
+
+    },
+
+    router
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import './bootstrap';
+// import '../sass/app.scss';
 //
-// import App from './components/App.vue'
+// import { createApp } from 'vue';
+// import * as VueRouter from 'vue-router';
 //
-// createApp(App).mount("#app")
+//
+// import Index from './components/Index.vue';
+// import PostComponent from "./components/PostComponent.vue";
+//
+//
+//
+// const routes = [
+//     {path: '/', component: Index},
+//     {path: '/post', component: PostComponent},
+// ]
+//
+// const router = VueRouter.createRouter({
+//     history: VueRouter.createWebHistory('/'),
+//     routes,
+// })
+//
+// const app = createApp({})
+//
+// app.use(router)
+//
+// app.component('index-component', Index)
+//

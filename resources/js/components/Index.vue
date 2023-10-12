@@ -1,12 +1,12 @@
 <template>
 <div>
-    It`s single post
+    This is index! фауууууу
 </div>
 </template>
 
 <script>
 export default {
-    name: "SinglePostComponent"
+    name: "Index"
 }
 </script>
 

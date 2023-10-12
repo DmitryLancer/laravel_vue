@@ -3,6 +3,7 @@
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
-
-
-
+//Route::get('/', function () {
+//    return view('app');
+//});
+//
+//
+Route::get('/', 'App\Http\Controllers\IndexController');
+//
+//Route::get('/', [App\Http\Controllers\IndexController::class]);
+//
+//
 
 //
 //Route::get('/', function () {
