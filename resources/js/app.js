@@ -1,23 +1,26 @@
 
 
 
-
-import Vue from 'vue'
+import Vue from 'vue';
 import router from "./router";
+
+import Index from './components/Index.vue'
+
 import './bootstrap';
+import '../sass/app.scss';
 
 
-const app = new Vue ({
+const app = new Vue({
     el: '#app',
 
     components: {
-
+        Index
     },
 
     router
 })
 
-
+app.mount('#app');
 
 
 

@@ -1,7 +1,7 @@
 <template>
-<div>
-    This is index! фауууууу
-</div>
+    <div>
+        This is index! фауууууу fafasfasfasfas
+    </div>
 </template>
 
 <script>
