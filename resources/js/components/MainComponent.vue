@@ -1,5 +1,5 @@
 <template>
-    <div> Post</div>
+    <div>Home page</div>
 
 </template>
 

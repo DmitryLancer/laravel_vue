@@ -1,7 +1,7 @@
 //
 // import { createRouter, createWebHistory } from 'vue-router';
 // import Index from './components/Index.vue';
-// import PostComponent from './components/PostComponent.vue';
+// import PostComponent from './components/MainComponent.vue';
 //
 // const routes = [
 //     {
@@ -36,7 +36,7 @@
 // //
 // // import Vue from 'vue';
 // // import VueRouter from "vue-router";
-// // import PostComponent from "./components/PostComponent.vue";
+// // import PostComponent from "./components/MainComponent.vue";
 // //
 // // Vue.use(VueRouter)
 // //
@@ -56,7 +56,7 @@
 // // //
 // // // import {createApp} from 'vue';
 // // // import VueRouter from "vue-router";
-// // // import PostComponent from "./components/PostComponent.vue";
+// // // import PostComponent from "./components/MainComponent.vue";
 // // //
 // // // Vue.use(VueRouter)
 // // //
@@ -78,7 +78,7 @@
 // // // })
 // // //
 // // // //
-// // // // import PostComponent from './components/PostComponent.vue'
+// // // // import PostComponent from './components/MainComponent.vue'
 // // // //
 // // // // createApp(PostComponent).mount("#app")
 // // // //

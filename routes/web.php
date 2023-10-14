@@ -22,10 +22,10 @@ use App\Http\Controllers\IndexController;
 //
 //
 
-//Route::get('/{any}', function () {
-//    return view('index');
-//})->where("any",".*");
-Route::get('/', 'App\Http\Controllers\IndexController');
+Route::get('/{any}', function () {
+    return view('index');
+})->where("any",".*");
+//Route::get('/', 'App\Http\Controllers\IndexController');
 //
 //Route::get('/', [App\Http\Controllers\IndexController::class]);
 //

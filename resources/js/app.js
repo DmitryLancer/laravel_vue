@@ -1,17 +1,17 @@
-
 import './bootstrap';
 import '../sass/app.scss';
 
-import { createApp } from "vue/dist/vue.esm-bundler.js";
-import { createRouter, createWebHistory } from 'vue-router';
+import {createApp} from "vue/dist/vue.esm-bundler.js";
+import {createRouter, createWebHistory} from 'vue-router';
 
-import App from './layouts/App.vue';
 import Index from './components/Index.vue';
-import PostComponent from './components/PostComponent.vue';
+import MainComponent from './components/MainComponent.vue';
+import TagComponent from "./components/TagComponent.vue";
 
 const routes = [
-     { path: '/', component: Index },
-     { path: '/post', component: PostComponent },
+    {path: '/', component: MainComponent},
+    {path: '/tag', component: TagComponent},
+
 ]
 
 const router = createRouter({
@@ -19,7 +19,7 @@ const router = createRouter({
     routes
 })
 
-createApp(App)
-.use(router)
-.mount('#app')
+createApp(Index)
+    .use(router)
+    .mount('#app')
 
