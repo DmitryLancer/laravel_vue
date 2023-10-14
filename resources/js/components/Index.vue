@@ -1,7 +1,6 @@
 <template>
     <div class="mb-5">
-        <router-link class="p-4" to="/">Home</router-link>
-        <router-link to="/tag">Tag</router-link>
+        <router-link class="p-4" :to="{name: 'person.index'}">People</router-link>
         <router-view/>
     </div>
 </template>

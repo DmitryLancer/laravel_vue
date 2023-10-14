@@ -5,12 +5,14 @@ import {createApp} from "vue/dist/vue.esm-bundler.js";
 import {createRouter, createWebHistory} from 'vue-router';
 
 import Index from './components/Index.vue';
-import MainComponent from './components/MainComponent.vue';
-import TagComponent from "./components/TagComponent.vue";
 
 const routes = [
-    {path: '/', component: MainComponent},
-    {path: '/tag', component: TagComponent},
+    {
+        path: '/people',
+        name: 'person.index',
+        component: () => import('./components/Person/Index.vue')
+    },
+
 
 ]
 
