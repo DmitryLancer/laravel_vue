@@ -1,15 +1,9 @@
 <template>
-<div>
-   POSTSTSTTSSTSTSTSST
-</div>
+    <div> Post</div>
+
 </template>
 
+
 <script>
-export default {
-    name: "PostComponent",
-}
+
 </script>
-
-<style scoped>
-
-</style>

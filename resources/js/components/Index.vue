@@ -1,13 +1,12 @@
 <template>
     <div>
-        This is index! фауууууу fafasfasfasfas
+        This is index!
+        <router-view />
     </div>
 </template>
 
 <script>
-export default {
-    name: "Index"
-}
+
 </script>
 
 <style scoped>

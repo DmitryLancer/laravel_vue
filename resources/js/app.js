@@ -1,55 +1,59 @@
 
-
-
-import Vue from 'vue';
-import router from "./router";
-
-import Index from './components/Index.vue'
-
 import './bootstrap';
-import '../sass/app.scss';
 
+import { createApp } from "vue/dist/vue.esm-bundler.js";
+import { createRouter, createWebHistory } from 'vue-router';
 
-const app = new Vue({
-    el: '#app',
+import Index from './components/Index.vue';
+import PostComponent from './components/PostComponent.vue';
 
+import router from './router'
+
+const app = createApp({
     components: {
-        Index
-    },
+        Index,
+        PostComponent,
+    }
+});
 
-    router
-})
-
-app.mount('#app');
-
-
+app.mount('#app')
+app.use(router)
 
 
-
-
-
-
-
-
-
+// const routes = [
+//     { path: '/', component: Index },
+//     { path: '/post', component: PostComponent },
+// ]
+//
+// const router = createRouter({
+//     history: createWebHistory(),
+//     routes
+// })
+//
+// createApp({})
+//     .component('Index', Index)
+//     .component('Post', PostComponent)
+//     .use(router)
+//     .mount('#app')
 
 
 
 // import './bootstrap';
 // import '../sass/app.scss';
 //
-// import { createApp } from 'vue';
-// import * as VueRouter from 'vue-router';
+// import {createApp} from 'vue';
+// import * as VueRouter from 'vue-router'
 //
-//
-// import Index from './components/Index.vue';
-// import PostComponent from "./components/PostComponent.vue";
-//
-//
+// import Index from './components/Index.vue'
+// import PostComponent from './components/PostComponent.vue'
 //
 // const routes = [
 //     {path: '/', component: Index},
-//     {path: '/post', component: PostComponent},
+//     {
+//         path: '/posts',
+//         name: 'posts',
+//         component: PostComponent,
+//     },
 // ]
 //
 // const router = VueRouter.createRouter({
@@ -57,9 +61,12 @@ app.mount('#app');
 //     routes,
 // })
 //
+//
 // const app = createApp({})
 //
 // app.use(router)
 //
-// app.component('index-component', Index)
+// app.component('Index', Index)
+//
+// app.mount('#app')
 //
