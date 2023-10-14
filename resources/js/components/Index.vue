@@ -1,7 +1,9 @@
 <template>
     <div>
         This is index!
-        <router-view />
+        <router-link to="/">Home</router-link>
+        <router-link to="/post">Post</router-link>
+        <router-view></router-view>
     </div>
 </template>
 

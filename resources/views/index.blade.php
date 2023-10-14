@@ -14,9 +14,7 @@
 <body>
 
 <div id="app">
-
-
-<post-component></post-component>
+    <index></index>
 </div>
 
 </body>
