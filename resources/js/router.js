@@ -25,7 +25,7 @@ const routes = [
         component: () => import('./components/Person/Edit.vue')
     },
     {
-        path: '/people/show',
+        path: '/people/:id',
         name: 'person.show',
         component: () => import('./components/Person/Show.vue')
     },
