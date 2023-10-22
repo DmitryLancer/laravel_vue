@@ -1,5 +1,6 @@
 import './bootstrap';
 import '../sass/app.scss';
+import store from './store';
 
 import {createApp} from "vue/dist/vue.esm-bundler.js";
 import {createRouter, createWebHistory} from 'vue-router';
@@ -40,5 +41,6 @@ const router = createRouter({
 
 createApp(Index)
     .use(router)
+    .use(store)
     .mount('#app')
 
